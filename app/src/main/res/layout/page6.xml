@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="74dp"
+        android:layout_height="72dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/smile" />
+
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="120dp"
+        android:layout_height="24dp"
+        android:text="워드 클라우드 분석"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/imageView" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <!-- 스피너 추가 -->
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_marginTop="40dp"
+            android:minHeight="48dp"
+            android:padding="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/centerImageView"
+            app:layout_constraintEnd_toStartOf="@+id/spinnerText"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- 스피너 오른쪽에 텍스트뷰 추가 -->
+        <TextView
+            android:id="@+id/spinnerText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="의 워드 클라우드"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/spinner"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/spinner"
+            app:layout_constraintTop_toTopOf="@+id/spinner" />
+
+        <!-- 중간보다 아래쪽에 이미지뷰 추가 -->
+        <ImageView
+            android:id="@+id/centerImageView"
+            android:layout_width="350dp"
+            android:layout_height="250dp"
+            android:layout_marginTop="250dp"
+            app:layout_constraintTop_toBottomOf="@id/spinner"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/button_share"
+            android:src="@drawable/wordcloud" />
+
+        <!-- 첫 번째 버튼 추가 -->
+        <TextView
+            android:id="@+id/button_share"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/button_wordcloud"
+            android:gravity="center"
+            android:text="공유하기"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            app:layout_constraintTop_toBottomOf="@id/centerImageView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/button_save" />
+
+        <!-- 두 번째 버튼 추가 -->
+        <TextView
+            android:id="@+id/button_save"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/button_wordcloud"
+            android:gravity="center"
+            android:text="저장하기"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            app:layout_constraintTop_toBottomOf="@id/centerImageView"
+            app:layout_constraintStart_toEndOf="@id/button_share"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
